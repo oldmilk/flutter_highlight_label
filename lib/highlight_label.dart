@@ -11,14 +11,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 
 const double _kOffset = 40.0; // distance to bottom of banner, at a 45 degree angle inwards
-const double _kHeight = 12.0; // height of banner
+const double _kHeight = 40.0; // height of banner
 const double _kBottomOffset = _kOffset + 0.707 * _kHeight; // offset plus sqrt(2)/2 * banner height
 const Rect _kRect = Rect.fromLTWH(-_kOffset, _kOffset - _kHeight, _kOffset * 2.0, _kHeight);
 
 const Color _kColor = Color(0xA0B71C1C);
 const TextStyle _kTextStyle = TextStyle(
   color: Color(0xFFFFFFFF),
-  fontSize: _kHeight * 0.85,
+  fontSize: _kHeight / 3 * 0.85,
   fontWeight: FontWeight.w900,
   height: 1.0,
 );
@@ -140,7 +140,7 @@ class HighlightLabelPainter extends CustomPainter {
       ..drawRect(_kRect, _paintHighlightLabel);
     const double width = _kOffset * 2.0;
     _textPainter.layout(minWidth: width, maxWidth: width);
-    _textPainter.paint(canvas, _kRect.topLeft + Offset(0.0, (_kRect.height - _textPainter.height) / 2.0));
+    _textPainter.paint(canvas, _kRect.topLeft + Offset(0.0, (_kRect.height - _textPainter.height) / 1.5));
   }
 
   @override
